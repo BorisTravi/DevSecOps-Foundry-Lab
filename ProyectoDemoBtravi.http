@@ -1,0 +1,6 @@
+@ProyectoDemoBtravi_HostAddress = http://localhost:5098
+
+GET {{ProyectoDemoBtravi_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###

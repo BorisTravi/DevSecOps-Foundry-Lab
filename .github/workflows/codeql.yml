@@ -1,0 +1,37 @@
+name: "CodeQL Advanced"
+
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+
+jobs:
+  analyze:
+    name: Analyze C# Code
+    runs-on: ubuntu-latest
+    permissions:
+      actions: read
+      contents: read
+      security-events: write
+
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v4
+
+    # Inicializa CodeQL para C#
+    - name: Initialize CodeQL
+      uses: github/codeql-action/init@v3
+      with:
+        languages: csharp
+        queries: security-extended,security-and-quality # 👈 Incluye reglas de Calidad y Seguridad
+
+    # Compila el proyecto .NET
+    - name: Build .NET Project
+      run: |
+        cd ProyectoDemo
+        dotnet build
+
+    # Ejecuta el análisis y publica resultados
+    - name: Perform CodeQL Analysis
+      uses: github/codeql-action/analyze@v3
