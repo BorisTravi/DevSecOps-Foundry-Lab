@@ -29,7 +29,6 @@ jobs:
     # Compila el proyecto .NET
     - name: Build .NET Project
       run: |
-        cd ProyectoDemo
         dotnet build
 
     # Ejecuta el análisis y publica resultados
