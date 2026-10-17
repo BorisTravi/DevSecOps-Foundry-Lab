@@ -41,7 +41,7 @@ namespace ProyectoDemo.Controllers
 
             // Trampa CodeQL (SQL Injection) y Calidad
             string query = "SELECT Correo FROM Usuarios WHERE Id = '" + idUsuario + "'";
-            SqlConnection conexion = new SqlConnection("Server=miServer;Database=miBD;User Id=sa;Password=secreto;Encrypt=True;TrustServerCertificate=False;");
+            using var conexion = new SqlConnection("Server=miServer;Database=miBD;User Id=sa;Password=secreto;Encrypt=True;TrustServerCertificate=False;");
             SqlCommand comando = new SqlCommand(query, conexion);
 
             return Ok(new
