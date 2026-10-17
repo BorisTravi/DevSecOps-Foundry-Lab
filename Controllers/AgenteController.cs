@@ -12,6 +12,7 @@ namespace ProyectoDemo.Controllers
     [Route("api/[controller]")]
     public class AgenteController : ControllerBase
     {
+           // Cambio para forzar PR
         // Trampa de Seguridad: Credencial hardcodeada (Secret Scanning)
         private const string FoundryAgentToken = "Bearer eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.Foundry_Fake_Secret";
         private const string FoundryEndpoint = "https://tu-instancia-foundry.com/api/v1/agents/execution";
