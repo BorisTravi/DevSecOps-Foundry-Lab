@@ -29,7 +29,7 @@ jobs:
     # Compila el proyecto .NET
     - name: Build .NET Project
       run: |
-        cd ProyectoDemo
+        cd ProyectoDemoBtravi
         dotnet build
 
     # Ejecuta el análisis y publica resultados
